@@ -1,4 +1,4 @@
-$(() => {
+$(() => {//Función ready
     const ingredientes = [
         "Carne",
         "Pollo",
@@ -20,6 +20,9 @@ $(() => {
         }    
     }
 
+    let seleccionados = [];
+    mostrarIngredientes();
+
     const mostrarSeleccionados = () => {
         $("#seleccionados").html(seleccionados.join(","))
     }
@@ -36,9 +39,6 @@ $(() => {
             $("#total-extra").html(`$${extras.length*800}`)
         }
     }
-
-    let seleccionados = [];
-    mostrarIngredientes()
 
     $(document).on("click",".check-ingredientes", function() {
         const checked = $(this).prop('checked');
